@@ -1,0 +1,42 @@
+Using the System
+
+1 Installing the Software
+	The software is very easy to install. 
+	Simply chose where you would like the files to be located and place the ObjectDigitizer.jar file in that folder. 
+	Then extract the contents and the software is ready to be used. 
+	At this point install Putty and OpenSCAD if it not already installed. 
+	See [a] to download the installer for Putty and [b] to download the installer for OpenSCAD. 
+
+2 Starting the System
+	The first step in starting the system is to ensure that the hardware is plugged in to the power supply and the computer. 
+	Next, start the software via command prompt. 
+	This is done by navigating to the folder in which the files have been placed with “cd” followed by the path to the folder
+		then entering the command “java ObjectDigitizerDriver.java”.
+	Once the software has started it will prompt the user to begin the scan by pressing the start button on the hardware.
+	This will cause the hardware to begin the process of collecting the data for the model.
+
+3 The Conversion
+	Once the scan has been completed the hardware will stop moving.
+	The data has been sent from the hardware to the software at this point.
+	The software will automatically begin processing the data after 10 seconds. 
+	Once the time is up, the software will now begin converting the collected data into a usable point cloud. 
+	The data is collected in a cylindrical coordinate system and has been sent to the software as a set of three numbers: angle, height, and distance.
+	The software will convert these numbers to a corresponding point (x, y, z) by utilizing the appropriate mathematical formulas.
+
+4 Generating the Model
+	The software now uses the newly generated points to create the model by use of another program, OpenSCAD.
+	It does this by using the points to create functions that are recognized by OpenSCAD. 
+
+5 Saving the Model
+	Once the model has been generated from the commands, the software will display a prompt to ask the user 
+		to decide on a name for the file along with the folder where the file should be saved. 
+	After that has been done, the software saves the model as an .STL file with that name.
+
+6 Shutting Down the System
+	Once the model has been saved the software will display a prompt which will ask if the user would like to scan another object or
+		if they would like to quit. 
+	If the user chooses to quit, the software will prompt the user to unplug the scanner from the power supply and the computer.
+	Then the software itself will shut down and the user may close the command prompt window.
+
+[a] https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+[b] https://www.openscad.org/downloads.html
